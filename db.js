@@ -79,13 +79,10 @@ let listSchema = new Schema({
 	id: {type: String, index: true, unique: true},
 	slug: String,
 	owner_id: String,
-	owner_screen_name: String,
 	done: Boolean,
 	batches: Number,
 	currentBatch: Number,
 	friends: [String],
-	addedFriends: Schema.Types.Mixed,
-	privateFriends: Schema.Types.Mixed,
 	refreshedListDate: {type: Date, default: '1/1/2018'}
 });
 

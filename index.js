@@ -45,7 +45,7 @@ app.get('/timeline/:userId/:userScreenName/:viewerId', async (req, res) => {
         res.writeHead(200);
         res.end(timeline);
       } else {
-        await requestList(sqs, name, userId, viewerId);
+        requestList(sqs, name, userId, viewerId);
         let user = await Users.findOne({id: userId});
         if (user && user.twitterTokenKey) {
           let tokenKey = user.twitterTokenKey;
